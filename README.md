@@ -3,7 +3,8 @@
 - Create Surveys
 - No ads
 - No tracking
-- Free
+- It's free
+- 
 
 
 ## How it works
