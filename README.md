@@ -1,4 +1,4 @@
-### LibreMonkey allows you to create unlimited online surveys with no ads for at no cost.
+### LibreMonkey allows you to create unlimited online surveys with no ads at no cost.
 ## Features
 - Create Surveys
 - No ads
