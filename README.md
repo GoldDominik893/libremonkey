@@ -4,7 +4,6 @@
 - No ads
 - No tracking
 - It's free
-- 
 
 
 ## How it works
