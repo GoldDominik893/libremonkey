@@ -18,9 +18,9 @@ session_start();
     <div class="center-container">
         <form method="post" action="signupsql.php">
             <label for="username"><b>Username</b></label><br>
-            <input type="text" placeholder="Enter Username" name="username" id="username" required><br>
+            <input class="loginform"  type="text" placeholder="Enter Username" name="username" id="username" required><br>
             <label for="password"><b>Password</b></label><br>
-            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+            <input class="loginform" type="password" placeholder="Enter Password" name="password" id="password" required>
 
             <p>Already have an account? <a href="login.php">Login</a></p>
 

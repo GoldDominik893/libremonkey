@@ -19,16 +19,30 @@ if ($_SESSION['logged_in'] == true) {
 </ul>
 
 <div class="loginbg">
-<h1 class="center">Client Area - Create a form</h1>
+<h1 class="center">Form Creation</h1>
     <div class="center-container2 whitebg">
         <h1 class="no-margin">Form Creation</h1><br>
-        <p class="no-margin"><a href="createform.php?r=test" style="color: black;">TEST(this will create a blank form)</a></p>
+        <form action="createform.php">
+            <input type="hidden" name="r" value="create">
+
+            <label for="title">Title:</label><br>
+            <input class="formcreationinput" type="text" id="title" name="title"><br>
+            
+            <label for="description">Description:</label><br>
+            <textarea class="formcreationinput" id="description" name="description"></textarea><br><br>
+            
+            <label for="status">Allow people to submit responses</label>
+            <input type="checkbox" id="status" name="status" checked><br><br>
+            
+            <input type="submit" value="Next">
+        </form>
+        <p class="no-margin"><a href="createform.php?r=create" style="color: black;">TEST(this will create a blank form) also ignore this i will remove later but i still need it</a></p>
     </div>
 </div>
 </body>
 </html>
 <?php
-if ($_GET['r'] == 'test') {
+if ($_GET['r'] == 'create') {
     include('../config.php');
 
     $conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
