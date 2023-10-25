@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono&family=Roboto+Slab&family=Signika+Negative&display=swap');
 body { 
   margin: 0px;
-  background-color: #f1f1f1;
+  background-color: #f3f3f3;
   font-family: 'Anton', sans-serif;
   font-family: 'Roboto Mono', monospace;
   font-family: 'Roboto Slab', serif;
   font-family: 'Signika Negative', sans-serif;
   }
+a {
+  color: white;
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -20,7 +23,7 @@ li {
   float: left;
 }
 
-li a {
+li a, .currentuser {
   display: block;
   color: white;
   text-align: center;
@@ -31,13 +34,40 @@ li:hover {
   background-color: #111
 }
 .welcome {
-  background-image: url(/images/hero-bg.png);
+  background-image: url(../images/hero-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
   color: white;
   padding-top: 170px;
   padding-bottom: 180px;
+}
+.welcome2 {
+  background-color: #3a61ce;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.footer {
+  background-color: #1f1f1f;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.loginbg {
+  background-color: #3a61ce;
+  height: calc(100vh - 68px);
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  padding-top: 20px;
 }
 .button {
   padding: 10px 20px;
@@ -80,4 +110,81 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+
+
+input[type=text], input[type=password] {
+  width: 315px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  background: #00000066;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: white;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 90%;
+  max-width: 100px;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-container2 {
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.whitebg {
+  background-color: white;
+  max-width: 680px;
+  color: black;
+}
+.no-margin {
+  margin: 0;
+}
+
+.button-form {
+  background-color: #e4e4e4;
+  border-radius: 7px;
+  padding: 6px 10px;
+  float: right;
+  text-decoration: none;
+  outline: none;
+  transition: transform 0.2s;
+  transition: 0.3s;
+}
+
+.button-form:hover {
+  cursor: pointer;
+  background-color: rgba(30,30,30,0.2);
+  transition: transform 0.2s;
+  transition: 0.3s
 }
