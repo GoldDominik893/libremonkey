@@ -6,8 +6,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `monkey`.`login` (
   `user_id` INT(12) NOT NULL AUTO_INCREMENT,
-  `username` TEXT NOT NULL,
-  `password` TEXT NOT NULL,
+  `username` VARCHAR(65535) NOT NULL,
+  `password` VARCHAR(65535) NOT NULL,
   `salt1` TEXT NOT NULL,
   `salt2` TEXT NOT NULL,
   PRIMARY KEY (`user_id`)
@@ -15,9 +15,9 @@ CREATE TABLE `monkey`.`login` (
 
 CREATE TABLE `monkey`.`forms` ( 
   `form_id` INT(12) NOT NULL AUTO_INCREMENT,
-  `creator_username` TEXT NOT NULL,
-  `title` TEXT NOT NULL,
-  `description` TEXT NOT NULL,
+  `creator_username` VARCHAR(65535) NOT NULL,
+  `title` VARCHAR(65535) NOT NULL,
+  `description` VARCHAR(65535) NOT NULL,
   `creation_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_modified_date` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` TEXT NOT NULL,

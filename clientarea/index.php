@@ -23,7 +23,7 @@ if ($_SESSION['logged_in'] == true) {
 <h1 class="center">Client Area</h1>
     <div class="center-container2 whitebg">
         <a class="button-form" style="color: black;" href="createform.php">Create a form</a>
-        <h1 class="no-margin">All of your forms:</h1><br>
+        <h1 class="no-margin">All of your forms:</h1>
 
 
 
@@ -55,7 +55,7 @@ if ($_SESSION['logged_in'] == true) {
                         echo "Response Count: " . $row['response_count'] . "<br>";
                     }
                 } else {
-                    echo '<p class="no-margin">You don\'t have any forms yet! <a href="createform.php" style="color: black;">Create one</a></p>';
+                    echo '<br><p class="no-margin">You don\'t have any forms yet! <a href="createform.php" style="color: black;">Create one</a></p>';
                 }
                 $stmt->close();
             } else {
