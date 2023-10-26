@@ -5,10 +5,12 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 CREATE TABLE `monkey`.`login` (
+  `user_id` INT(12) NOT NULL AUTO_INCREMENT,
   `username` TEXT NOT NULL,
   `password` TEXT NOT NULL,
   `salt1` TEXT NOT NULL,
-  `salt2` TEXT NOT NULL
+  `salt2` TEXT NOT NULL,
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `monkey`.`forms` ( 

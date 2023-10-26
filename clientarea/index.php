@@ -43,6 +43,7 @@ if ($_SESSION['logged_in'] == true) {
                 $result = $stmt->get_result();
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
+                        echo "<br>";
                         echo "Form ID: " . $row['form_id'] . "<br>";
                         echo "Creator Username: " . $row['creator_username'] . "<br>";
                         echo "Title: " . $row['title'] . "<br>";
@@ -52,7 +53,6 @@ if ($_SESSION['logged_in'] == true) {
                         echo "Status: " . $row['status'] . "<br>";
                         echo "Form URL: " . $row['form_url'] . "<br>";
                         echo "Response Count: " . $row['response_count'] . "<br>";
-                        echo "<br>";
                     }
                 } else {
                     echo '<p class="no-margin">You don\'t have any forms yet! <a href="createform.php" style="color: black;">Create one</a></p>';
