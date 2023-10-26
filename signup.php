@@ -7,7 +7,7 @@ session_start();
 <link rel="stylesheet" href="styles/main.css">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
+<body class="loginbg-color">
 <ul>
   <li><a href=".">LibreMonkey</a></li>
 </ul>

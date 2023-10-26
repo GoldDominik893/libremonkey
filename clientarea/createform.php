@@ -8,7 +8,7 @@ if ($_SESSION['logged_in'] == true) {
 <link rel="stylesheet" href="../styles/main.css">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
+<body class="loginbg-color">
 <ul>
   <li><a href="../">LibreMonkey</a></li>
   <?php 
@@ -29,14 +29,13 @@ if ($_SESSION['logged_in'] == true) {
             <input class="formcreationinput" type="text" id="title" name="title"><br>
             
             <label for="description">Description:</label><br>
-            <textarea class="formcreationinput" id="description" name="description"></textarea><br><br>
+            <textarea class="formcreationinput" id="description" name="description"></textarea><br>
             
-            <label for="status">Allow people to submit responses</label>
+            <label for="status">Allow users to submit responses</label>
             <input type="checkbox" id="status" name="status" checked><br><br>
             
             <input type="submit" value="Next">
         </form>
-        <p class="no-margin"><a href="createform.php?r=create" style="color: black;">TEST(this will create a blank form) also ignore this i will remove later but i still need it</a></p>
     </div>
 </div>
 </body>
@@ -52,10 +51,14 @@ if ($_GET['r'] == 'create') {
     }
     
     $creator_username = $_SESSION['logged_in_user'];
-    $title = "Untitled Form";
-    $description = "This is a description";
-    $status = "inactive";
-    $form_url = "https://example.com/form";
+    $title = $_GET['title'];
+    $description = $_GET['description'];
+    if ($_GET['status'] == 'on') {
+        $status = "active"; 
+    } else {
+        $status = "inactive";
+    }
+    $form_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://').$_SERVER['SERVER_NAME'].dirname(dirname($_SERVER['PHP_SELF'])).'/form/?id=';
     $response_count = 0;
     
     $sql = "INSERT INTO forms (creator_username, title, description, status, form_url, response_count) VALUES ('$creator_username', '$title', '$description', '$status', '$form_url', $response_count)";
@@ -66,7 +69,7 @@ if ($_GET['r'] == 'create') {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
     $conn->close();
-    header('Location: createform.php');
+    header('Location: index.php');
 }
 } else { 
     header('Location: ../');

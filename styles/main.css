@@ -61,13 +61,14 @@ li:hover {
   padding-bottom: 20px;
 }
 .loginbg {
-  background-color: #3a61ce;
   height: calc(100vh - 68px);
-  overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
   padding-top: 20px;
+}
+.loginbg-color {
+  background-color: #3a61ce;
 }
 .button {
   padding: 10px 20px;
