@@ -44,15 +44,16 @@ if ($_SESSION['logged_in'] == true) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<br>";
+                        echo "<b>" . $row['title'] . "</b><br>";
                         echo "Form ID: " . $row['form_id'] . "<br>";
                         echo "Creator Username: " . $row['creator_username'] . "<br>";
-                        echo "Title: " . $row['title'] . "<br>";
                         echo "Description: " . $row['description'] . "<br>";
-                        echo "Creation Date: " . $row['creation_date'] . "<br>";
-                        echo "Last Modified Date: " . $row['last_modified_date'] . "<br>";
+                        echo "Created: " . $row['creation_date'] . "<br>";
+                        echo "Last Modified: " . $row['last_modified_date'] . "<br>";
                         echo "Status: " . $row['status'] . "<br>";
-                        echo "Form URL: " . $row['form_url'] . "<br>";
-                        echo "Response Count: " . $row['response_count'] . "<br>";
+                        echo "form/?id=" . $row['form_id'] . "<br>";
+                        echo $row['response_count'] . " Responses <br>";
+                        echo '<a style="color: black;" href="edit_form.php?form_id=' . $row['form_id'] . '">Edit form</a><br>';
                     }
                 } else {
                     echo '<br><p class="no-margin">You don\'t have any forms yet! <a href="createform.php" style="color: black;">Create one</a></p>';

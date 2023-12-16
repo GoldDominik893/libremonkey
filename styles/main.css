@@ -194,8 +194,8 @@ tr:nth-child(odd) {
   padding: 5px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  background: #ece8e8;
-  border: 2px solid rgb(63, 63, 63);
+  background: #eeeeee;
+  border: 1px solid rgb(63, 63, 63);
   border-radius: 5px;
   color: rgb(0, 0, 0);
 }

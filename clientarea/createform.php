@@ -58,10 +58,9 @@ if ($_GET['r'] == 'create') {
     } else {
         $status = "inactive";
     }
-    $form_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://').$_SERVER['SERVER_NAME'].dirname(dirname($_SERVER['PHP_SELF'])).'/form/?id=';
     $response_count = 0;
     
-    $sql = "INSERT INTO forms (creator_username, title, description, status, form_url, response_count) VALUES ('$creator_username', '$title', '$description', '$status', '$form_url', $response_count)";
+    $sql = "INSERT INTO forms (creator_username, title, description, status, response_count) VALUES ('$creator_username', '$title', '$description', '$status', $response_count)";
     
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
