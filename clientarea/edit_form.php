@@ -75,17 +75,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Optionally, provide a success message or redirect to a success page
             // header("Location: success.php");
-            echo "Form updated successfully";
+            $formupdatemessage = "Form updated successfully";
         }
     } elseif (isset($_POST['delete_form'])) {
         // Delete the entire form and associated fields
         $sql_delete_form = "DELETE FROM forms WHERE form_id='$form_id'";
         if ($conn->query($sql_delete_form) === FALSE) {
-            echo "Error deleting form: " . $conn->error;
+            echo '<div class="loginbg">
+            <h1 class="center">Edit Form</h1>
+                <div class="center-container2 whitebg">Error deleting form: ' . $conn->error;
         } else {
             // Optionally, provide a success message or redirect to a success page
             // header("Location: success.php");
-            echo "Form deleted successfully";
+            echo '<div class="loginbg">
+            <h1 class="center">Edit Form</h1>
+                <div class="center-container2 whitebg">Form deleted successfully';
             // Additionally, you might want to redirect the user to a different page after deletion
             // header("Location: some_other_page.php");
             exit;
@@ -102,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if ($creator_username != "") {?><input class="button-form" style="color: black; border: none; font-size: 17px;" type="submit" name="delete_form" value="Delete Form" onclick="return confirm('Are you sure you want to delete this form? This action cannot be undone.');"><?php } ?>
     </form>
     <h1 class="no-margin">Edit Form</h1>
-
+    <?php echo $formupdatemessage; ?>
 
 
 
