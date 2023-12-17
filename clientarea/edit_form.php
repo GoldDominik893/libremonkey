@@ -104,7 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <!-- Edit Form Details Section -->
-    <h2>Edit Form Details</h2>
     <form id="form" method="POST" action="">
         <label for="form_title">Title:</label>
         <input class="formcreationinput" type="text" id="form_title" name="form_title" value="<?php echo htmlspecialchars($current_title); ?>"><br>

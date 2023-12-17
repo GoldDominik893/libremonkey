@@ -47,7 +47,7 @@ if ($_SESSION['logged_in'] == true) {
                         echo "<b>" . $row['title'] . "</b><br>";
                         echo "Form ID: " . $row['form_id'] . "<br>";
                         echo "Creator Username: " . $row['creator_username'] . "<br>";
-                        echo "Description: " . $row['description'] . "<br>";
+                        echo "Description: " . nl2br($row['description']) . "<br>";
                         echo "Created: " . $row['creation_date'] . "<br>";
                         echo "Last Modified: " . $row['last_modified_date'] . "<br>";
                         echo "Status: " . $row['status'] . "<br>";
