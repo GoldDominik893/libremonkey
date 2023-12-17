@@ -37,10 +37,7 @@ if (!$result_fields) {
   <?php } ?>
 </ul>
 
-<div class="loginbg">
-<h1 class="center">Edit Form</h1>
-    <div class="center-container2 whitebg">
-    <h1 class="no-margin">Edit Form</h1>
+
 
     
 
@@ -98,7 +95,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 
-
+<div class="loginbg">
+<h1 class="center">Edit Form</h1>
+    <div class="center-container2 whitebg">
+    <form method="POST" action="">
+        <?php if ($creator_username != "") {?><input class="button-form" style="color: black; border: none; font-size: 17px;" type="submit" name="delete_form" value="Delete Form" onclick="return confirm('Are you sure you want to delete this form? This action cannot be undone.');"><?php } ?>
+    </form>
+    <h1 class="no-margin">Edit Form</h1>
 
 
 
@@ -115,14 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="checkbox" id="form_status" name="form_status"<?php if ($current_status == "active") {echo "checked";} ?>><br>
 
         <input type="submit" name="update_form" value="Update Form">
-    </form>
-
-
-
-    <!-- Delete Form Section -->
-    <h2>Delete Form</h2>
-    <form method="POST" action="">
-        <input type="submit" name="delete_form" value="Delete Form" onclick="return confirm('Are you sure you want to delete this form? This action cannot be undone.');">
     </form>
 
 
@@ -217,9 +212,13 @@ if ($result_fields->num_rows > 0) {
 
 } else {
     if ($creator_username) {
-        echo "Error 401 - you do not have permission to edit this form";
+        echo '<div class="loginbg">
+        <h1 class="center">Edit Form</h1>
+            <div class="center-container2 whitebg">Error 401 - you do not have permission to edit this form';
     } else {
-        echo "Error 404 - this form does not exist";
+        echo '<div class="loginbg">
+        <h1 class="center">Edit Form</h1>
+            <div class="center-container2 whitebg">Error 404 - this form does not exist';
     }
     
 } 
