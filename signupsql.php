@@ -30,6 +30,11 @@ if(mysqli_num_rows($select)) {
     exit('<h2>This username already exists</h2>');
 }
 
+$select = mysqli_query($conn, "SELECT MAX(user_id) AS max_user_id FROM login");
+if ($row = mysqli_fetch_assoc($select)) {
+    $max_user_id = $row['max_user_id'];
+}
+
 $sql = "INSERT INTO login (username, password, salt1, salt2)
 VALUES ('$usr', '$pw', '$salt1', '$salt2')";
 
@@ -38,6 +43,7 @@ if ($conn->query($sql) === TRUE) {
     $_SESSION['logged_in_user'] = $usr;
     $_SESSION['logged_in'] = true;
     $_SESSION['hashed_pass'] = $pw;
+    $_SESSION['user_id'] = $max_user_id + 1;
 } else {
   echo "Error: <br>" . $conn->error;
 }

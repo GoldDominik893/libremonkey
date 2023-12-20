@@ -1,29 +1,40 @@
 <?php
 include('../config.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $form_id = $_POST['form_id'];
     $field_label = $_POST['field_label'];
-    // Get other field details
+    // Assuming field_type needs a default value, otherwise adjust accordingly
 
-    // Connect to your database - Replace with your database credentials
-
+    // Connect to the database
     $conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Insert new field into the fields table
-    $sql_insert_field = "INSERT INTO fields (form_id, field_label) VALUES ('$form_id', '$field_label')";
-    if ($conn->query($sql_insert_field) === FALSE) {
-        echo "Error adding field: " . $conn->error;
-        exit;
+    // Prepare and execute the SQL query to insert the new field
+    $sql_insert_field = "INSERT INTO fields (form_id, field_label, field_type) VALUES (?, ?, 'default_value')";
+    $stmt = $conn->prepare($sql_insert_field);
+
+    if (!$stmt) {
+        die("Prepare failed: " . $conn->error);
     }
 
-    // If successful, echo a success message or any desired output
-    echo "Field added successfully";
+    // Bind parameters and execute the statement
+    $stmt->bind_param("is", $form_id, $field_label);
+    $stmt_executed = $stmt->execute();
 
+    if ($stmt_executed === TRUE) {
+        echo "Field added successfully";
+    } else {
+        echo "Error adding field: " . $stmt->error;
+        error_log("Error adding field: " . $stmt->error); // Log the error
+    }
+
+    // Close the statement and database connection
+    $stmt->close();
     $conn->close();
 }
 ?>

@@ -103,6 +103,13 @@ table {
   max-width: 500px;
 }
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 900px;
+}
+
 td, th {
   border: 1px solid #dddddd;
   text-align: left;

@@ -22,6 +22,7 @@ while ($row = mysqli_fetch_assoc($query))
     $dbpassword = $row['password'];
     $dbsalt1 = $row['salt1'];
     $dbsalt2 = $row['salt2'];
+    $dbuserid = $row['user_id'];
     $hashsaltusergivenpassword = hash('sha512', $dbsalt1 . $pw . $dbsalt2);
 }
 if ($usr==$dbusername&&$hashsaltusergivenpassword==$dbpassword)
@@ -29,6 +30,7 @@ if ($usr==$dbusername&&$hashsaltusergivenpassword==$dbpassword)
     $_SESSION['logged_in_user'] = $usr;
     $_SESSION['logged_in'] = true;
     $_SESSION['hashed_pass'] = $dbpassword;
+    $_SESSION['user_id'] = $dbuserid;
     header("refresh:0;url=index.php");
 }
 else {
