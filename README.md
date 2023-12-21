@@ -16,6 +16,6 @@ It is strongly not reccommended to deploy this software for production as there 
 
 ## Screenshot of current stage
 
-![](/images/currentstage.png)
+![](/images/currentstage.jpg)
 
 ##### disclaimer: its not done lol
