@@ -55,14 +55,28 @@ $conn->close();
         <p class="no-margin"><?php echo nl2br($form_details['description']); ?></p>
         <!-- Display fetched form details and fields in an HTML form -->
         <form method="POST" action="process_response.php">
-            <?php foreach ($fields as $field): ?>
-                <label for="field_<?php echo $field['field_id']; ?>"><?php echo $field['field_label']; ?>:</label>
-                <?php if ($field['field_type'] === 'text' or $field['field_type'] === 'default_value'): ?>
-                    <input type="text" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
-                <?php elseif ($field['field_type'] === 'textarea'): ?>
-                    <textarea id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"></textarea>
-                <?php endif; ?>
-            <?php endforeach; ?>
+        <?php foreach ($fields as $field): ?>
+            <label for="field_<?php echo $field['field_id']; ?>"><?php echo $field['field_label']; ?>:</label>
+
+            <?php if ($field['field_type'] === 'text'): ?>
+                <input type="text" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'color'): ?>
+                <input type="color" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'tel'): ?>
+                <input type="tel" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'date'): ?>
+                <input type="date" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+
+
+            <?php elseif ($field['field_type'] === 'textarea'): ?>
+                <textarea id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"></textarea><br>
+
+            <?php endif; ?>
+        <?php endforeach; ?>
+
             <input type="hidden" name="form_id" value="<?php echo $form_id; ?>">
             <input type="submit" value="Submit Response">
         </form>

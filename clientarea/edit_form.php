@@ -139,40 +139,79 @@ if ($result_fields->num_rows > 0) {
     <button id="addFieldBtn">Add Field</button><br><br>
 
     <div id="addFieldForm" style="display: none;">
-        <input type="hidden" id="formId" value="<?php echo $form_id; ?>">
-        <label for="fieldLabel">Field Label:</label><br>
-        <input type="text" id="fieldLabel"><br><br>
-        <!-- Other field details such as type, etc. -->
-        <button id="submitFieldBtn">Submit</button>
+    <input type="hidden" id="formId" value="<?php echo $form_id; ?>">
+    
+    <label for="fieldLabel">Field Label:</label><br>
+    <input type="text" id="fieldLabel"><br><br>
+    
+    <label for="fieldType">Field Type:</label><br>
+    <select id="fieldType">
+        <option value="text">Text</option>
+        <option value="date">Date</option>
+        <option value="tel">Telephone Number</option>
+        <option value="color">Hex Color</option>
+    </select><br><br>
+    
+    <!-- Other field details specific to certain types -->
+    <div id="additionalFields" style="display: none;">
+        
+        <!-- For date -->
+        <label for="dateField">Date:</label><br>
+        <input type="date" id="dateField"><br><br>
+        
+        <!-- For tel -->
+        <label for="telField">Tel:</label><br>
+        <input type="tel" id="telField"><br><br>
+        
+        <!-- For color -->
+        <label for="colorField">Color:</label><br>
+        <input type="color" id="colorField"><br><br>
     </div>
+    
+    <button id="submitFieldBtn">Submit</button>
+</div>
+
 
     <script>
-    document.getElementById('addFieldBtn').addEventListener('click', function() {
-        document.getElementById('addFieldForm').style.display = 'block';
-    });
+document.getElementById('addFieldBtn').addEventListener('click', function() {
+    document.getElementById('addFieldForm').style.display = 'block';
+});
 
-    document.getElementById('submitFieldBtn').addEventListener('click', function() {
-        var formId = document.getElementById('formId').value;
-        var fieldLabel = document.getElementById('fieldLabel').value;
-        // Get other field details
+document.getElementById('fieldType').addEventListener('change', function() {
+    var selectedType = this.value;
+    var additionalFields = document.getElementById('additionalFields');
+    
+    if (selectedType === 'image' || selectedType === 'date' || selectedType === 'tel' || selectedType === 'color') {
+        additionalFields.style.display = 'block';
+    } else {
+        additionalFields.style.display = 'none';
+    }
+});
 
-        // AJAX request to process adding the field
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (this.readyState === XMLHttpRequest.DONE) {
-                if (this.status === 200) {
-                    // Successful response
-                    location.reload(); // Reload the page after successful addition
-                } else {
-                    // Error response
-                    alert("Error adding field");
-                }
+document.getElementById('submitFieldBtn').addEventListener('click', function() {
+    var formId = document.getElementById('formId').value;
+    var fieldLabel = document.getElementById('fieldLabel').value;
+    var fieldType = document.getElementById('fieldType').value;
+    // Get other field details based on the selected type
+    
+    // AJAX request to process adding the field
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE) {
+            if (this.status === 200) {
+                // Successful response
+                location.reload(); // Reload the page after successful addition
+            } else {
+                // Error response
+                alert("Error adding field");
             }
-        };
-        xhr.open("POST", "process_add_field.php", true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send("form_id=" + formId + "&field_label=" + fieldLabel);
-    });
+        }
+    };
+    xhr.open("POST", "process_add_field.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("form_id=" + formId + "&field_label=" + fieldLabel + "&field_type=" + fieldType);
+});
+
     </script>
 
     <!-- PHP code to handle field deletion -->
