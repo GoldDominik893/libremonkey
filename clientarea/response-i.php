@@ -83,7 +83,7 @@ if ($response = $result_response->fetch_assoc()) {
 
     while ($response_data = $result_response_data->fetch_assoc()) {
         echo "<b>" . $response_data['field_label'] . "</b><br>";
-        echo $response_data['user_input']."<br>";
+        echo htmlspecialchars($response_data['user_input'])."<br>";
     }
 
     $stmt_fetch_response_data->close();

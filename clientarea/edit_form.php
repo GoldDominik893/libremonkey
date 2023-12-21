@@ -65,16 +65,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['update_form'])) {
         $new_title = $_POST['form_title'];
         $new_description = $_POST['form_description'];
-        $new_status = $_POST['form_status'];
 
         // Update the form details in the forms table
-        if ($new_status == "on") {$new_status = "active";} else {$new_status = "inactive";}
-        $sql_update_form = "UPDATE forms SET title='$new_title', description='$new_description', status='$new_status' WHERE form_id='$form_id'";
+        $sql_update_form = "UPDATE forms SET title='$new_title', description='$new_description' WHERE form_id='$form_id'";
         if ($conn->query($sql_update_form) === FALSE) {
             echo "Error updating form: " . $conn->error;
         } else {
-            // Optionally, provide a success message or redirect to a success page
-            // header("Location: success.php");
+
             $formupdatemessage = "Form updated successfully";
         }
     } elseif (isset($_POST['delete_form'])) {
@@ -85,13 +82,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1 class="center">Edit Form</h1>
                 <div class="center-container2 whitebg">Error deleting form: ' . $conn->error;
         } else {
-            // Optionally, provide a success message or redirect to a success page
-            // header("Location: success.php");
+
             echo '<div class="loginbg">
             <h1 class="center">Edit Form</h1>
                 <div class="center-container2 whitebg">Form deleted successfully';
-            // Additionally, you might want to redirect the user to a different page after deletion
-            // header("Location: some_other_page.php");
             exit;
         }
     }
@@ -106,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if ($creator_username != "") {?><input class="button-form" style="color: black; border: none; font-size: 17px;" type="submit" name="delete_form" value="Delete Form" onclick="return confirm('Are you sure you want to delete this form? This action cannot be undone.');"><?php } ?>
     </form>
     <h1 class="no-margin">Edit Form</h1>
-    <?php echo $formupdatemessage; ?>
+    <?php echo htmlspecialchars($formupdatemessage); ?>
 
 
 
@@ -117,9 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="form_description">Description:</label><br>
         <textarea class="formcreationinput" id="form_description" name="form_description"><?php echo htmlspecialchars($current_description); ?></textarea>
-
-        <label for="form_status">Allow submissions:</label>
-        <input type="checkbox" id="form_status" name="form_status"<?php if ($current_status == "active") {echo "checked";} ?>><br>
 
         <input type="submit" name="update_form" value="Update Form">
     </form>

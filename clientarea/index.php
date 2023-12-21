@@ -48,7 +48,6 @@ if ($_SESSION['logged_in'] == true) {
                         echo $row['response_count'] . " Responses ".'<a style="color: black;" href="response.php/?id=' . $row['form_id'] . '">View Responses</a><br>';
                         echo "Created: " . $row['creation_date'] . "<br>";
                         echo "Last Modified: " . $row['last_modified_date'] . "<br>";
-                        echo "Status: " . $row['status'] . "<br>";
                         echo '<a style="color: black;" href="../form?id=' . $row['form_id'] . '">Share this form</a><br>';
                         echo '<a style="color: black;" href="edit_form.php?form_id=' . $row['form_id'] . '">Edit form</a><br>';
                     }

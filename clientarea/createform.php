@@ -31,9 +31,6 @@ if ($_SESSION['logged_in'] == true) {
             <label for="description">Description:</label><br>
             <textarea class="formcreationinput" id="description" name="description"></textarea><br>
             
-            <label for="status">Allow users to submit responses</label>
-            <input type="checkbox" id="status" name="status" checked><br><br>
-            
             <input type="submit" value="Next">
         </form>
     </div>
@@ -53,11 +50,7 @@ if ($_GET['r'] == 'create') {
     $creator_username = $_SESSION['logged_in_user'];
     $title = $_GET['title'];
     $description = $_GET['description'];
-    if ($_GET['status'] == 'on') {
-        $status = "active"; 
-    } else {
-        $status = "inactive";
-    }
+    $status = "inactive";
     $response_count = 0;
     
     $sql = "INSERT INTO forms (creator_username, title, description, status, response_count) VALUES ('$creator_username', '$title', '$description', '$status', $response_count)";
