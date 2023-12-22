@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if ($result_fields->num_rows > 0) {
     while ($field = $result_fields->fetch_assoc()) {
-        echo '<label classs="inline" for="' . $field['field_id'] . '">' . $field['field_label'] . '</label><div class="field_type_icon inline">type: ' . $field['field_type'] . '</div>';
+        echo '<label class="inline" for="' . $field['field_id'] . '">' . $field['field_label'] . '</label><div class="field_type_icon inline">type: ' . $field['field_type'] . '</div>';
         // Delete button for each field
         echo '<form class="inline" method="POST">';
         echo '<input class="inline" type="submit" name="delete_field" value="Delete">';
