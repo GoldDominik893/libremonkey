@@ -216,3 +216,15 @@ textarea {
   resize: vertical;
   width: calc(100% - 14px);
 }
+
+.field_type_icon {
+  background-color: #ceb4ff;
+  border-radius: 4px;
+  padding: 0 5px 0 5px;
+  width: fit-content;
+  margin-left: 2px;
+}
+
+.inline {
+  display: inline-block;
+} 

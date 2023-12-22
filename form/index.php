@@ -44,35 +44,42 @@ $conn->close();
   <li><a href="../">LibreMonkey</a></li>
   <?php 
   if ($_SESSION['logged_in'] == true) { ?>
-   <li style="float:right"><div class="currentuser"><?php echo $_SESSION['logged_in_user']; ?></div></li>
+   <li style="float:right"><div class="currentuser"><?php echo htmlspecialchars($_SESSION['logged_in_user']); ?></div></li>
    <li style="float:right"><a href="../logout.php">Logout</a></li>
-  <?php } ?>
+  <?php } else {
+    header('Location: not-logged-in.php');
+    exit(0);
+  } ?>
 </ul>
 <div class="loginbg">
 <h1 class="center">Form</h1>
     <div class="center-container2 whitebg">
-        <h1 class="no-margin"><?php echo $form_details['title']; ?></h1>
-        <p class="no-margin"><?php echo nl2br($form_details['description']); ?></p>
+        <h1 class="no-margin"><?php echo htmlspecialchars($form_details['title']); ?></h1>
+        <p class="no-margin"><?php echo htmlspecialchars(nl2br($form_details['description'])); ?></p>
         <!-- Display fetched form details and fields in an HTML form -->
         <form method="POST" action="process_response.php">
         <?php foreach ($fields as $field): ?>
             <label for="field_<?php echo $field['field_id']; ?>"><?php echo $field['field_label']; ?>:</label>
 
             <?php if ($field['field_type'] === 'text'): ?>
-                <input type="text" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+                <input type="text" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
 
             <?php elseif ($field['field_type'] === 'color'): ?>
-                <input type="color" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+                <input type="color" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
 
             <?php elseif ($field['field_type'] === 'tel'): ?>
-                <input type="tel" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+                <input type="tel" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
 
             <?php elseif ($field['field_type'] === 'date'): ?>
-                <input type="date" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"><br>
+                <input type="date" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'textarea'): ?>
+                <textarea id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"></textarea><br>
+
 
 
             <?php elseif ($field['field_type'] === 'textarea'): ?>
-                <textarea id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo $field['field_id']; ?>"></textarea><br>
+                <textarea id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"></textarea><br>
 
             <?php endif; ?>
         <?php endforeach; ?>

@@ -14,7 +14,7 @@ session_start();
   if ($_SESSION['logged_in'] == true) { ?>
    <li style="float:right"><div class="currentuser"><?php echo $_SESSION['logged_in_user']; ?></div></li>
    <li style="float:right"><a href="logout.php">Logout</a></li>
-   <li style="float:right"><a href="clientarea/">Go to client area</a></li>
+   <li style="float:right"><a href="clientarea/">Client Area</a></li>
   <?php } else { ?>
     <li style="float:right"><a href="login.php">Login / Signup</a></li>
   <?php } ?>

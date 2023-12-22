@@ -123,11 +123,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if ($result_fields->num_rows > 0) {
     while ($field = $result_fields->fetch_assoc()) {
-        echo '<label for="' . $field['field_id'] . '">' . $field['field_label'] . '</label><br>';
+        echo '<label classs="inline" for="' . $field['field_id'] . '">' . $field['field_label'] . '</label><div class="field_type_icon inline">type: ' . $field['field_type'] . '</div>';
         // Delete button for each field
-        echo '<form method="POST" action="">';
+        echo '<form class="inline" method="POST">';
+        echo '<input class="inline" type="submit" name="delete_field" value="Delete">';
         echo '<input type="hidden" name="delete_field_id" value="' . $field['field_id'] . '">';
-        echo '<input type="submit" name="delete_field" value="Delete">';
         echo '</form><br>';
     }
 }
@@ -150,23 +150,8 @@ if ($result_fields->num_rows > 0) {
         <option value="date">Date</option>
         <option value="tel">Telephone Number</option>
         <option value="color">Hex Color</option>
+        <option value="textarea">Textarea</option>
     </select><br><br>
-    
-    <!-- Other field details specific to certain types -->
-    <div id="additionalFields" style="display: none;">
-        
-        <!-- For date -->
-        <label for="dateField">Date:</label><br>
-        <input type="date" id="dateField"><br><br>
-        
-        <!-- For tel -->
-        <label for="telField">Tel:</label><br>
-        <input type="tel" id="telField"><br><br>
-        
-        <!-- For color -->
-        <label for="colorField">Color:</label><br>
-        <input type="color" id="colorField"><br><br>
-    </div>
     
     <button id="submitFieldBtn">Submit</button>
 </div>
@@ -175,17 +160,6 @@ if ($result_fields->num_rows > 0) {
     <script>
 document.getElementById('addFieldBtn').addEventListener('click', function() {
     document.getElementById('addFieldForm').style.display = 'block';
-});
-
-document.getElementById('fieldType').addEventListener('change', function() {
-    var selectedType = this.value;
-    var additionalFields = document.getElementById('additionalFields');
-    
-    if (selectedType === 'image' || selectedType === 'date' || selectedType === 'tel' || selectedType === 'color') {
-        additionalFields.style.display = 'block';
-    } else {
-        additionalFields.style.display = 'none';
-    }
 });
 
 document.getElementById('submitFieldBtn').addEventListener('click', function() {
