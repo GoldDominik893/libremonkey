@@ -228,3 +228,7 @@ textarea {
 .inline {
   display: inline-block;
 } 
+
+.green-hl {
+  background-color: #9fffdc;
+}

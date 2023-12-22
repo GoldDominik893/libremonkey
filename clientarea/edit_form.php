@@ -151,6 +151,13 @@ if ($result_fields->num_rows > 0) {
         <option value="tel">Telephone Number</option>
         <option value="color">Hex Color</option>
         <option value="textarea">Textarea</option>
+        <option value="email">Email</option>
+        <option value="month">Month</option>
+        <option value="number">Number</option>
+        <option value="range">Range</option>
+        <option value="time">Time</option>
+        <option value="url">URL</option>
+        <option value="week">Week</option>
     </select><br><br>
     
     <button id="submitFieldBtn">Submit</button>

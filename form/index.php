@@ -76,6 +76,26 @@ $conn->close();
             <?php elseif ($field['field_type'] === 'textarea'): ?>
                 <textarea id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"></textarea><br>
 
+            <?php elseif ($field['field_type'] === 'email'): ?>
+                <input type="email" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'month'): ?>
+                <input type="month" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'number'): ?>
+                <input type="number" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'range'): ?>
+                <input type="range" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'time'): ?>
+                <input type="time" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'url'): ?>
+                <input type="url" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
+
+            <?php elseif ($field['field_type'] === 'week'): ?>
+                <input type="week" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>
 
 
             <?php elseif ($field['field_type'] === 'textarea'): ?>

@@ -20,7 +20,7 @@ session_start();
   <?php } ?>
   
 </ul>
-<div class="welcome"><h1>Create unlimited surveys for free.</h1><br>
+<div class="welcome"><h1>Create forms without spyware.</h1><br>
 <a href="#" class="button">Get Started</a>
 </div>
 
@@ -41,31 +41,45 @@ survey functions such as dropdowns, radio buttons, date and telephone numbers.<b
   </tr>
   <tr>
     <td><b>Question Limit</b></td>
-    <td>Unlimited</td>
+    <td class="green-hl">No limit</td>
     <td>10</td>
     <td>200</td>
     <td>Unlimited</td>
   </tr>
   <tr>
     <td><b>Survey Limit</b></td>
-    <td>Unlimited</td>
+    <td class="green-hl">No limit</td>
     <td>200</td>
     <td>Max 5GB</td>
     <td>Max 15GB</td>
   </tr>
   <tr>
     <td><b>Responses Limit</b></td>
-    <td>Unlimited</td>
+    <td class="green-hl">No limit</td>
     <td>100</td>
     <td>Max 5GB</td>
     <td>Max 15GB</td>
   </tr>
   <tr>
     <td><b>Question Types</b></td>
-    <td>0</td>
+    <td>12</td>
     <td>Limited</td>
     <td>A few</td>
-    <td>Many</td>
+    <td class="green-hl">Many</td>
+  </tr>
+  <tr>
+    <td><b>Privacy</b></td>
+    <td class="green-hl">No data collected or sold</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td><b>Speed</b></td>
+    <td>Very fast</td>
+    <td>-</td>
+    <td>-</td>
+    <td class="green-hl">Fastest</td>
   </tr>
 </table><br><br>
 </div>
