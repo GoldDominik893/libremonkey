@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/github/license/golddominik893/libremonkey?label=License&color=brightgreen&cacheSeconds=3600)](./LICENSE.txt)
+[![Release](https://img.shields.io/github/v/release/golddominik893/libremonkey?label=Release&color=brightgreen&cacheSeconds=3600)](https://github.com/golddominik893/libremonkey/releases/latest)
 ## LibreMonkey - create forms without spyware
 
 > [!CAUTION]
