@@ -9,7 +9,7 @@ session_start();
 </head>
 <body class="loginbg-color">
 <ul>
-  <li><a href=".">LibreMonkey</a></li>
+  <li><a href="../">LibreMonkey</a></li>
 </ul>
 
 
