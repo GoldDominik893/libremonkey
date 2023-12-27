@@ -4,7 +4,7 @@ session_start();
 $usr = $_POST['username'];
 $pw = $_POST['password'];
 
-include('config.php');
+include('../config.php');
 
 if ($usr&&$pw)
 {
@@ -31,10 +31,10 @@ if ($usr==$dbusername&&$hashsaltusergivenpassword==$dbpassword)
     $_SESSION['logged_in'] = true;
     $_SESSION['hashed_pass'] = $dbpassword;
     $_SESSION['user_id'] = $dbuserid;
-    header("refresh:0;url=index.php");
+    header("refresh:0;url=../index.php");
 }
 else {
-    echo "<h2>Invalid User or Password</h2>";
+    header("refresh:0;url=login.php?r=password_incorrect");
 }
 
 die();

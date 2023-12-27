@@ -18,7 +18,7 @@ $usr = $_POST['username'];
 $salt1 = getName($n);
 $salt2 = getName($n);
 $pw = hash('sha512', $salt1.$_POST['password'].$salt2);
-include('config.php');
+include('../config.php');
 $conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -26,8 +26,8 @@ if ($conn->connect_error) {
 
 $select = mysqli_query($conn, "SELECT * FROM login WHERE username = '".$_POST['username']."'");
 if(mysqli_num_rows($select)) {
-    header('refresh:2;url=signup.php');
-    exit('<h2>This username already exists</h2>');
+    header('refresh:0;url=signup.php?r=user_exists');
+    exit(0);
 }
 
 $select = mysqli_query($conn, "SELECT MAX(user_id) AS max_user_id FROM login");
@@ -50,5 +50,5 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
-header('refresh:2;url=index.php');
+header('refresh:0;url=../index.php');
 ?>
