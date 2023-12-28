@@ -30,3 +30,25 @@ User response
 
 > [!NOTE]
 > it is unfinished lol
+
+### License
+
+Libremonkey is licensed under the MIT License.
+
+#### Liability
+
+We take no responsibility for the use of our tool, or external instances
+provided by third parties. We strongly recommend you abide by the valid
+official regulations in your country. Furthermore, we refuse liability
+for any inappropriate use of Liberatube, such as illegal downloading.
+This tool is provided to you in the spirit of free, open software.
+
+You may view the LICENSE in which this software is provided to you [here](./LICENSE).
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
