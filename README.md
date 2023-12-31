@@ -1,5 +1,9 @@
 [![License](https://img.shields.io/github/license/golddominik893/libremonkey?label=License&color=brightgreen&cacheSeconds=3600)](./LICENSE)
 [![Release](https://img.shields.io/github/v/release/golddominik893/libremonkey?label=Release&color=brightgreen&cacheSeconds=3600)](https://github.com/golddominik893/libremonkey/releases/latest)
+[![Commits](https://img.shields.io/github/commit-activity/y/golddominik893/libremonkey?color=red&label=commits)](https://github.com/golddominik893/libremonkey/commits)
+[![Issues](https://img.shields.io/github/issues/golddominik893/libremonkey?color=important)](https://github.com/golddominik893/libremonkey/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/golddominik893/libremonkey?color=blueviolet)](https://github.com/golddominik893/libremonkey/pulls)
+
 ## LibreMonkey - create forms without spyware
 
 > [!CAUTION]
