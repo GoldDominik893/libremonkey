@@ -9,10 +9,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch $form_id (You might fetch this from somewhere)
-$form_id = $_GET['form_id']; // Replace this with your method to fetch form_id
+$form_id = $_GET['form_id']; 
 
-// Fetch fields associated with the $form_id
 $sql_fetch_fields = "SELECT * FROM fields WHERE form_id = $form_id";
 $result_fields = $conn->query($sql_fetch_fields);
 
@@ -37,12 +35,9 @@ if (!$result_fields) {
   <?php } ?>
 </ul>
 
-
-
     
 
 <?php
-// Fetch current form details to prefill the form fields
 $sql_fetch_form_details = "SELECT title, description, status, creator_username FROM forms WHERE form_id='$form_id'";
 $result_form_details = $conn->query($sql_fetch_form_details);
 
@@ -53,7 +48,7 @@ if ($result_form_details->num_rows > 0) {
     $current_status = $_POST['form_status'] ?? $row['status'];
     $creator_username = $row['creator_username'];
 } else {
-    // Handle if no form details are found
+
     $current_title = '';
     $current_description = '';
     $current_status = '';
@@ -66,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $new_title = $_POST['form_title'];
         $new_description = $_POST['form_description'];
 
-        // Update the form details in the forms table
         $sql_update_form = "UPDATE forms SET title='$new_title', description='$new_description' WHERE form_id='$form_id'";
         if ($conn->query($sql_update_form) === FALSE) {
             echo "Error updating form: " . $conn->error;
@@ -75,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $formupdatemessage = "Form updated successfully";
         }
     } elseif (isset($_POST['delete_form'])) {
-        // Delete the entire form and associated fields
+
         $sql_delete_form = "DELETE FROM forms WHERE form_id='$form_id'";
         if ($conn->query($sql_delete_form) === FALSE) {
             echo '<div class="loginbg">
@@ -104,7 +98,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <!-- Edit Form Details Section -->
     <form id="form" method="POST" action="">
         <label for="form_title">Title:</label>
         <input class="formcreationinput" type="text" id="form_title" name="form_title" value="<?php echo htmlspecialchars($current_title); ?>"><br>
@@ -118,13 +111,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<!-- Display existing fields -->
+
 <?php
 
 if ($result_fields->num_rows > 0) {
     while ($field = $result_fields->fetch_assoc()) {
         echo '<label class="inline" for="' . $field['field_id'] . '">' . $field['field_label'] . '</label><div class="field_type_icon inline">type: ' . $field['field_type'] . '</div>';
-        // Delete button for each field
+
         echo '<form class="inline" method="POST">';
         echo '<input class="inline" type="submit" name="delete_field" value="Delete">';
         echo '<input type="hidden" name="delete_field_id" value="' . $field['field_id'] . '">';
@@ -133,9 +126,6 @@ if ($result_fields->num_rows > 0) {
 }
 ?>
 
-
-
-    <!-- Add Field Form -->
     <button id="addFieldBtn">Add Field</button><br><br>
 
     <div id="addFieldForm" style="display: none;">
@@ -173,17 +163,13 @@ document.getElementById('submitFieldBtn').addEventListener('click', function() {
     var formId = document.getElementById('formId').value;
     var fieldLabel = document.getElementById('fieldLabel').value;
     var fieldType = document.getElementById('fieldType').value;
-    // Get other field details based on the selected type
-    
-    // AJAX request to process adding the field
+
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (this.readyState === XMLHttpRequest.DONE) {
             if (this.status === 200) {
-                // Successful response
-                location.reload(); // Reload the page after successful addition
+                location.reload();
             } else {
-                // Error response
                 alert("Error adding field");
             }
         }
@@ -195,12 +181,9 @@ document.getElementById('submitFieldBtn').addEventListener('click', function() {
 
     </script>
 
-    <!-- PHP code to handle field deletion -->
     <?php
     if (isset($_POST['delete_field'])) {
         $delete_field_id = $_POST['delete_field_id'];
-
-        // Connect to your database - Replace with your database credentials
 
         $conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 
@@ -208,12 +191,11 @@ document.getElementById('submitFieldBtn').addEventListener('click', function() {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // Delete the specified field from the fields table
         $sql_delete_field = "DELETE FROM fields WHERE field_id='$delete_field_id'";
         if ($conn->query($sql_delete_field) === FALSE) {
             echo "Error deleting field: " . $conn->error;
         } else {
-            header("Location: edit_form.php?form_id=$form_id"); // Redirect to refresh the page after deletion
+            header("Location: edit_form.php?form_id=$form_id"); 
         }
 
         $conn->close();

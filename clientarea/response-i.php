@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../config.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,46 +23,34 @@ session_start();
 <h1 class="center">Client Area</h1>
     <div class="center-container2 whitebg">
 <?php
-
-// Include the configuration file
-include('../config.php');
-
-// Check if the user is logged in
 if (!isset($_SESSION['logged_in_user'])) {
-    // Redirect to the login page or handle unauthorized access
     header('Location: ../../');
     exit;
 }
 
-// Check if the response ID is provided in the URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    // Handle invalid response ID, redirect, or display an error message
     echo "Invalid response ID";
     exit;
 }
 
-// Connect to the database
 $conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch the username from the session
 $username = $_SESSION['logged_in_user'];
 $response_id = $_GET['id'];
 
-// Fetch the specific response details based on the response ID and the current user or form owner
 $sql_fetch_response = "SELECT r.*, f.creator_username
                         FROM responses r
                         INNER JOIN forms f ON r.form_id = f.form_id
                         WHERE r.response_id = ? AND (r.user_id = ? OR f.creator_username = ?)";
 $stmt_fetch_response = $conn->prepare($sql_fetch_response);
-$stmt_fetch_response->bind_param("iss", $response_id, $username, $username); // Assuming response_id and user_id are strings
+$stmt_fetch_response->bind_param("iss", $response_id, $username, $username);
 $stmt_fetch_response->execute();
 $result_response = $stmt_fetch_response->get_result();
 
-// Display the individual response details and associated response data
 if ($response = $result_response->fetch_assoc()) {
     echo "<h2>Response Details:</h2>";
     echo "<p>Response ID: " . $response['response_id'] . "</p>";
@@ -69,13 +58,12 @@ if ($response = $result_response->fetch_assoc()) {
     echo "<p>User ID: " . $response['user_id'] . "</p>";
     echo "<p>Submitted Time: " . $response['submitted_time'] . "</p>";
 
-    // Fetch and display response data associated with the response ID
     $sql_fetch_response_data = "SELECT rd.user_input, f.field_label
                                 FROM response_data rd
                                 INNER JOIN fields f ON rd.field_id = f.field_id
                                 WHERE rd.response_id = ?";
     $stmt_fetch_response_data = $conn->prepare($sql_fetch_response_data);
-    $stmt_fetch_response_data->bind_param("i", $response_id); // Assuming response_id is an integer
+    $stmt_fetch_response_data->bind_param("i", $response_id);
     $stmt_fetch_response_data->execute();
     $result_response_data = $stmt_fetch_response_data->get_result();
 
@@ -88,7 +76,6 @@ if ($response = $result_response->fetch_assoc()) {
 
     $stmt_fetch_response_data->close();
 } else {
-    // No response found or unauthorized access to the response
     echo "Response not found or unauthorized access";
 }
 

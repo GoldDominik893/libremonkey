@@ -64,26 +64,22 @@ if ($_SESSION['logged_in'] == true) {
         <br>
         
         <?php
-        // Connect to the database
 $conn = new mysqli(SERVERNAME, USERNAME, PASSWORD, DATABASE);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch the username from the session
 $username = $_SESSION['user_id'];
 
-// Fetch responses submitted by the current user
 $sql_fetch_user_responses = "SELECT response_id, form_id, submitted_time 
                             FROM responses 
                             WHERE user_id = ?";
 $stmt_fetch_user_responses = $conn->prepare($sql_fetch_user_responses);
-$stmt_fetch_user_responses->bind_param("s", $username); // Assuming user_id or username column type is string
+$stmt_fetch_user_responses->bind_param("s", $username);
 $stmt_fetch_user_responses->execute();
 $result_user_responses = $stmt_fetch_user_responses->get_result();
 
-// Display the user's responses
 echo '<h1 class="no-margin">Your responses:</h1><br><table border="1">';
 echo "<tr><th>Response ID</th><th>Form ID</th><th>Submitted Time</th><th>Actions</th></tr>";
 
