@@ -70,15 +70,15 @@ survey functions such as dropdowns, radio buttons, date and telephone numbers.<b
   <tr>
     <td><b>Privacy</b></td>
     <td class="green-hl">No data collected or sold</td>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
+    <td><a style="color: black;" href="https://www.surveymonkey.com/mp/legal/privacy/">Privacy</a></td>
+    <td><a style="color: black;" href="https://support.microsoft.com/en-us/office/security-and-privacy-in-microsoft-forms-7e57f9ba-4aeb-4b1b-9e21-b75318532cd9">Privacy</a></td>
+    <td><a style="color: black;" href="https://policies.google.com/privacy">Privacy</a></td>
   </tr>
   <tr>
     <td><b>Speed</b></td>
     <td>Very fast</td>
-    <td>-</td>
-    <td>-</td>
+    <td>Fast</td>
+    <td>Fast</td>
     <td class="green-hl">Fastest</td>
   </tr>
 </table><br><br>
