@@ -24,13 +24,17 @@ LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey res
 
 ### Screenshots (current stage)
 
-Home page
+| Home Page | Client Area |
+|---|---|
+| ![Home Page image](screenshots/home-page.png) | ![Client Area image](screenshots/client-area.png) |
 
-Client Area
+| Form Creation | Form Editing |
+|---|---|
+| ![Form Creation image](screenshots/form-creation.png) | ![Form Editing image](screenshots/form-editing.png) |
 
-Form creation and editing
-
-User response
+| User Response | Login Page |
+|---|---|
+| ![User Response image](screenshots/user-response.png) | ![Login Page image](login.png) |
 
 > [!NOTE]
 > it is unfinished lol
