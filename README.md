@@ -34,7 +34,7 @@ LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey res
 
 | User Response | Login Page |
 |---|---|
-| ![User Response image](screenshots/user-response.png) | ![Login Page image](login.png) |
+| ![User Response image](screenshots/user-response.png) | ![Login Page image](screenshots/login.png) |
 
 > [!NOTE]
 > it is unfinished lol
