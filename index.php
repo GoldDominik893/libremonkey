@@ -28,8 +28,8 @@ session_start();
 survey functions such as dropdowns, radio buttons, date and telephone numbers.<br>
 </h1></div>
 
-<div class="how-we-compare center">
-<br><br><br><h1>How we compare</h1>
+<br><br><br><h1 class="center">How we compare</h1>
+<div style="overflow: auto; max-width: 100vw;" class="how-we-compare center">
 
 <table align="center">
   <tr>
@@ -86,9 +86,14 @@ survey functions such as dropdowns, radio buttons, date and telephone numbers.<b
 
 <div class="welcome2">
 <h1>Other cool things about LibreMonkey:</h1>
-<p>- It is Open Source on GitHub</p>
-<p>- We don't sell or collect your data</p>
-<p>- We don't use cookies apart from the session cookie to keep you logged in.</p>
+<p>
+· It is Open Source on <a href="//github.com/golddominik893/libremonkey">GitHub</a>.<br>
+· We don't sell or collect your data.<br>
+· Cookies aren't used apart from the session cookie to keep you logged in.<br>
+· Optimised for mobile use.<br>
+· Easy to use.
+</p>
+
 </div>
 
 <div class="footer">
