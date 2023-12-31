@@ -37,7 +37,39 @@ LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey res
 | ![User Response image](screenshots/user-response.png) | ![Login Page image](screenshots/login.png) |
 
 > [!NOTE]
-> it is unfinished lol
+> This software is still under development and may not work as intended.
+
+### Prerequisites
+
+- A web server like Apache or Nginx
+- PHP interpreter
+- SQL database like MySQL
+- phpMyAdmin (OPTIONAL) 
+
+### Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/GoldDominik893/libremonkey.git
+cd libremonkey/
+```
+
+Move the contents of the libremonkey/ folder to the website root directory
+
+```bash
+mv * /var/www/html
+```
+
+Now Libremonkey will be accessible at `127.0.0.1:80`, but it requires an SQL database to operate.
+
+The easiest way to import the database.sql file would be by using a WebGUI with phpMyAdmin, but you can do it by any other means.
+
+Edit the `config.php` file to adjust the database credentials.
+
+```bash
+nano /var/www/html/config.php
+```
 
 ### License
 
@@ -48,7 +80,7 @@ Libremonkey is licensed under the MIT License.
 We take no responsibility for the use of our tool, or external instances
 provided by third parties. We strongly recommend you abide by the valid
 official regulations in your country. Furthermore, we refuse liability
-for any inappropriate use of Liberatube, such as illegal downloading.
+for any inappropriate use of Libremonkey, such as illegal data collection.
 This tool is provided to you in the spirit of free, open software.
 
 You may view the LICENSE in which this software is provided to you [here](./LICENSE).
