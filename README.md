@@ -48,7 +48,7 @@ LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey res
 
 ### Installation
 
-Clone the repository
+Clone the git repository
 
 ```bash
 git clone https://github.com/GoldDominik893/libremonkey.git
