@@ -18,6 +18,18 @@
 - No third party advertisements or data monetisation.
 - It's Free Open Source Software, the free use is dependant on the instance operator.
 
+### Advantages of LibreMonkey
+
+|                   | LibreMonkey       | SurveyMonkey(free)                           | Microsoft Forms(free)                            | Google Forms(free)                             |
+|-------------------|-------------------|----------------------------------------------|--------------------------------------------------|------------------------------------------------|
+| **Question Limit** | No limit          | 10                                           | 200                                              | Unlimited                                      |
+| **Survey Limit**   | No limit          | 200                                          | Max 5GB                                          | Max 15GB                                       |
+| **Responses Limit**| No limit          | 100                                          | Max 5GB                                          | Max 15GB                                       |
+| **Question Types** | 12                | Limited                                      | A few                                            | Many                                           |
+| **Privacy**        | No data collected or sold | [Privacy](https://www.surveymonkey.com/mp/legal/privacy/) | [Privacy](https://support.microsoft.com/en-us/office/security-and-privacy-in-microsoft-forms-7e57f9ba-4aeb-4b1b-9e21-b75318532cd9) | [Privacy](https://policies.google.com/privacy) |
+| **Speed**          | Very fast          | Fast                                         | Fast                                             | Fastest                                        |
+
+
 ### How it works
 
 LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey responses. LibreMonkey is the clear winner when in comparison to all the others because it is fast and does not sell your data.
