@@ -17,7 +17,7 @@ $r_msg = $_GET['r'] ?? "";
 <div class="loginbg">
 <h1 class="center">Signup</h1>
     <div class="center-container">
-        <form method="post" action="signupsql.php">
+        <form method="post" action="signupsql.php?formid=<?php echo $_GET['formid']; ?>">
         <?php if ($r_msg == "user_exists") { ?>
                 This username already exists<br>
             <?php } ?>
@@ -26,7 +26,7 @@ $r_msg = $_GET['r'] ?? "";
             <label for="password"><b>Password</b></label><br>
             <input class="loginform" type="password" placeholder="Enter Password" name="password" id="password" required>
 
-            <p>Already have an account? <a href="login.php">Login</a></p>
+            <p>Already have an account? <a href="login.php?formid=<?php echo $_GET['formid']; ?>">Login</a></p>
 
             <button type="submit" class="registerbtn">Let me in</button>
         </form>

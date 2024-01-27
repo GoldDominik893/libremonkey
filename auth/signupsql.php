@@ -50,5 +50,9 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
+if ($_GET['formid']) {
+  header('refresh:0;url=../form/?id='.$_GET['formid']);
+  exit(0);
+}
+
 header('refresh:0;url=../index.php');
-?>

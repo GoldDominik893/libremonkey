@@ -31,6 +31,11 @@ if ($usr==$dbusername&&$hashsaltusergivenpassword==$dbpassword)
     $_SESSION['logged_in'] = true;
     $_SESSION['hashed_pass'] = $dbpassword;
     $_SESSION['user_id'] = $dbuserid;
+    if ($_GET['formid']) {
+        header('refresh:0;url=../form/?id='.$_GET['formid']);
+        exit(0);
+    }
+
     header("refresh:0;url=../index.php");
 }
 else {
@@ -39,5 +44,3 @@ else {
 
 die();
 }
-
-?>

@@ -17,7 +17,7 @@ $r_msg = $_GET['r'] ?? "";
 <div class="loginbg">
 <h1 class="center">Login</h1>
     <div class="center-container">
-        <form method="post" action="loginsql.php">
+        <form method="post" action="loginsql.php?formid=<?php echo $_GET['formid']; ?>">
         <?php if ($r_msg == "password_incorrect") { ?>
                 The user or password is incorrect.<br>
             <?php } ?>
@@ -26,7 +26,7 @@ $r_msg = $_GET['r'] ?? "";
             <label for="password"><b>Password</b></label><br>
             <input class="loginform" type="password" placeholder="Enter Password" name="password" id="password" required>
 
-            <p>Don't have an account yet? <a href="signup.php">Signup</a></p>
+            <p>Don't have an account yet? <a href="signup.php?formid=<?php echo $_GET['formid']; ?>">Signup</a></p>
 
             <button type="submit" class="registerbtn">Let me in</button>
         </form>

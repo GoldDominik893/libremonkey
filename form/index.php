@@ -47,7 +47,7 @@ $conn->close();
    <li style="float:right"><div class="currentuser"><?php echo htmlspecialchars($_SESSION['logged_in_user']); ?></div></li>
    <li style="float:right"><a href="../auth/logout.php">Logout</a></li>
   <?php } else {
-    header('Location: not-logged-in.php');
+    header('Location: not-logged-in.php?formid='.$_GET['id']);
     exit(0);
   } ?>
 </ul>

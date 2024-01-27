@@ -21,7 +21,8 @@ session_start();
 <div class="loginbg">
 <h1 class="center">Client Area</h1>
     <div class="center-container2 whitebg">
-        401 Unauthorised - You may not fill out this form because you are not logged in.
+        401 Unauthorised - You may not fill out this form because you are not logged in.<br>
+        <a style="color: black;" href="../auth/login.php?formid=<?php echo $_GET['formid']; ?>">Login / Signup</a>
     </div><br>
 </div>
 </body>
