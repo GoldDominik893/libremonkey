@@ -56,12 +56,13 @@ if ($_GET['r'] == 'create') {
     $sql = "INSERT INTO forms (creator_username, title, description, status, response_count) VALUES ('$creator_username', '$title', '$description', '$status', $response_count)";
     
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        $last_id = $conn->insert_id;
+        echo "New record created successfully. Last inserted ID is: " . $last_id;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
     $conn->close();
-    header('Location: index.php');
+    header('Location: edit_form.php?form_id='.$last_id);
 }
 } else { 
     header('Location: ../');

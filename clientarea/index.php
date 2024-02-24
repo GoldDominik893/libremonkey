@@ -7,6 +7,7 @@ if ($_SESSION['logged_in'] == true) {
 <head>
 <link rel="stylesheet" href="../styles/main.css">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../styles/googlesymbols.css" />
 </head>
 <body class="loginbg-color">
 <ul>
@@ -22,7 +23,7 @@ if ($_SESSION['logged_in'] == true) {
 <div class="loginbg">
 <h1 class="center">Client Area</h1>
     <div class="center-container2 whitebg">
-        <a class="button-form" style="color: black;" href="createform.php">Create a form</a>
+        <a class="button-form" href="createform.php"><span class="material-symbols-outlined">add</span></a>
         <h1 class="no-margin">Your forms:</h1>
 
 
@@ -45,11 +46,11 @@ if ($_SESSION['logged_in'] == true) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<br>";
                         echo "<b>" . $row['title'] . "</b> <i>#" . $row['form_id'] . "</i><br>";
-                        echo $row['response_count'] . " Responses ".'<a style="color: black;" href="response.php/?id=' . $row['form_id'] . '">View Responses</a><br>';
                         echo "Created: " . $row['creation_date'] . "<br>";
                         echo "Last Modified: " . $row['last_modified_date'] . "<br>";
-                        echo '<a style="color: black;" href="../form?id=' . $row['form_id'] . '">Share this form</a><br>';
-                        echo '<a style="color: black;" href="edit_form.php?form_id=' . $row['form_id'] . '">Edit form</a><br>';
+                        echo '<a class="icon-button" href="response.php/?id=' . $row['form_id'] . '"><span class="material-symbols-outlined">lists</span></a>';
+                        echo '<a class="icon-button" href="../form?id=' . $row['form_id'] . '"><span class="material-symbols-outlined">share</span></a>';
+                        echo '<a class="icon-button" href="edit_form.php?form_id=' . $row['form_id'] . '"><span class="material-symbols-outlined">edit</span></a><br>';
                     }
                 } else {
                     echo '<br><p class="no-margin">You don\'t have any forms yet! <a href="createform.php" style="color: black;">Create one</a></p>';
@@ -105,6 +106,6 @@ $conn->close();
 </html>
 <?php
 } else { 
-    header('Location: ../');
+    header('Location: ../auth/signup.php');
 }
 ?>

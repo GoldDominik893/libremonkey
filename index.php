@@ -23,7 +23,7 @@ $logged_in_user = $_SESSION['logged_in'];
   
 </ul>
 <div class="welcome"><h1>Create forms without spyware.</h1><br>
-<a href="#" class="button">Get Started</a>
+<a href="clientarea/" class="button">Get Started</a>
 </div>
 
 <div class="center"><h1>LibreMonkey lets you create unlimited surveys at no cost, we have all sorts of<br> 

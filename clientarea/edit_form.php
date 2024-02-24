@@ -24,6 +24,7 @@ if (!$result_fields) {
 <head>
 <link rel="stylesheet" href="../styles/main.css">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../styles/googlesymbols.css" />
 </head>
 <body class="loginbg-color">
 <ul>
@@ -90,9 +91,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="loginbg">
 <h1 class="center">Edit Form</h1>
     <div class="center-container2 whitebg">
-    <form method="POST" action="">
-        <?php if ($creator_username != "") {?><input class="button-form" style="color: black; border: none; font-size: 17px;" type="submit" name="delete_form" value="Delete Form" onclick="return confirm('Are you sure you want to delete this form? This action cannot be undone.');"><?php } ?>
-    </form>
+    <form id="deleteForm" method="POST" action="">
+    <?php if ($creator_username != ""): ?>
+        <a href="#" class="button-form warning-button" onclick="confirmDelete();"><span class="material-symbols-outlined">delete</span></a>
+        <button type="submit" name="delete_form" style="display: none;"></button>
+    <?php endif; ?>
+</form>
+<script>
+    function confirmDelete() {
+        if (confirm('Are you sure you want to delete this form? This action cannot be undone.')) {
+            document.querySelector('form button[name="delete_form"]').click();
+        }
+        return false;
+    }
+</script>
+
+
+
+
+
+
+
+
     <h1 class="no-margin">Edit Form</h1>
     <?php echo htmlspecialchars($formupdatemessage); ?>
 
