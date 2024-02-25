@@ -24,7 +24,7 @@ if ($_SESSION['logged_in'] == true) {
 <h1 class="center">Client Area</h1>
     <div class="center-container2 whitebg">
         <a class="button-form" href="createform.php"><span class="material-symbols-outlined">add</span></a>
-        <h1 class="no-margin">Your forms:</h1>
+        <h2 class="no-margin">Your forms:</h2>
 
 
 
@@ -81,7 +81,7 @@ $stmt_fetch_user_responses->bind_param("s", $username);
 $stmt_fetch_user_responses->execute();
 $result_user_responses = $stmt_fetch_user_responses->get_result();
 
-echo '<h1 class="no-margin">Your responses:</h1><br><table border="1">';
+echo '<h2 class="no-margin">Your responses:</h2><br><table border="1">';
 echo "<tr><th>Response ID</th><th>Form ID</th><th>Submitted Time</th><th>Actions</th></tr>";
 
 while ($response = $result_user_responses->fetch_assoc()) {

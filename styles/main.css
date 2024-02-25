@@ -256,11 +256,12 @@ textarea {
   padding-bottom: 0;
   background-color: rgb(252, 55, 55);
   transition: transform 0.2s;
-  transition: 0.3s
+  transition: 0.3s;
+  margin-left: 3px;
 }
 
 .warning-button:hover {
   background-color: rgb(247, 129, 129);
   transition: transform 0.2s;
-  transition: 0.3s
+  transition: 0.3s;
 }

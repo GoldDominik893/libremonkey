@@ -54,7 +54,7 @@ $conn->close();
 <div class="loginbg">
 <h1 class="center">Form</h1>
     <div class="center-container2 whitebg">
-        <h1 class="no-margin"><?php echo htmlspecialchars($form_details['title']); ?></h1>
+        <h2 class="no-margin"><?php echo htmlspecialchars($form_details['title']); ?></h2>
         <p class="no-margin"><?php echo htmlspecialchars(nl2br($form_details['description'])); ?></p>
         <!-- Display fetched form details and fields in an HTML form -->
         <form method="POST" action="process_response.php">

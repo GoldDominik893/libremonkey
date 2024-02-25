@@ -14,7 +14,7 @@ include('../config.php');
   <?php 
   if ($_SESSION['logged_in'] == true) { ?>
    <li style="float:right"><div class="currentuser"><?php echo $_SESSION['logged_in_user']; ?></div></li>
-   <li style="float:right"><a href="../auth/logout.php">Logout</a></li>
+   <li style="float:right"><a href="../../auth/logout.php">Logout</a></li>
   <?php } ?>
 </ul>
 

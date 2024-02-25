@@ -94,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form id="deleteForm" method="POST" action="">
     <?php if ($creator_username != ""): ?>
         <a href="#" class="button-form warning-button" onclick="confirmDelete();"><span class="material-symbols-outlined">delete</span></a>
+        <a id="submitFormLink" class="button-form" href="#"><span class="material-symbols-outlined">save</span></a>
         <button type="submit" name="delete_form" style="display: none;"></button>
     <?php endif; ?>
 </form>
@@ -113,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <h1 class="no-margin">Edit Form</h1>
+    <h2 class="no-margin">Edit Form</h2>
     <?php echo htmlspecialchars($formupdatemessage); ?>
 
 
@@ -125,8 +126,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="form_description">Description:</label><br>
         <textarea class="formcreationinput" id="form_description" name="form_description"><?php echo htmlspecialchars($current_description); ?></textarea>
 
-        <input type="submit" name="update_form" value="Update Form">
+        <input type="hidden" name="update_form" value="update_form">
     </form>
+
+    <script>
+        document.getElementById('submitFormLink').addEventListener('click', function() {
+            document.getElementById('form').submit();
+        });
+    </script>
 
 
 

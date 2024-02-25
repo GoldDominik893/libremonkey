@@ -6,6 +6,7 @@ if ($_SESSION['logged_in'] == true) {
 <html>
 <head>
 <link rel="stylesheet" href="../styles/main.css">
+<link rel="stylesheet" href="../styles/googlesymbols.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body class="loginbg-color">
@@ -21,8 +22,8 @@ if ($_SESSION['logged_in'] == true) {
 <div class="loginbg">
 <h1 class="center">Form Creation</h1>
     <div class="center-container2 whitebg">
-        <h1 class="no-margin">Form Creation</h1><br>
-        <form action="createform.php">
+        <h2 class="no-margin">Form Creation</h2><br>
+        <form action="createform.php" id="myForm">
             <input type="hidden" name="r" value="create">
 
             <label for="title">Title:</label><br>
@@ -31,8 +32,15 @@ if ($_SESSION['logged_in'] == true) {
             <label for="description">Description:</label><br>
             <textarea class="formcreationinput" id="description" name="description"></textarea><br>
             
-            <input type="submit" value="Next">
+            <a id="submitFormLink" class="icon-button" href="#"><span class="material-symbols-outlined">navigate_next</span></a>
         </form>
+
+        <script>
+        document.getElementById('submitFormLink').addEventListener('click', function() {
+            document.getElementById('myForm').submit();
+        });
+        </script>
+
     </div>
 </div>
 </body>
