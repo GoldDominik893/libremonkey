@@ -1,20 +1,20 @@
+## LibreMonkey - create forms without spyware
+
 [![License](https://img.shields.io/github/license/golddominik893/libremonkey?label=License&color=brightgreen&cacheSeconds=3600)](./LICENSE)
 [![Release](https://img.shields.io/github/v/release/golddominik893/libremonkey?label=Release&color=brightgreen&cacheSeconds=3600)](https://github.com/golddominik893/libremonkey/releases/latest)
 [![Commits](https://img.shields.io/github/commit-activity/y/golddominik893/libremonkey?color=red&label=commits)](https://github.com/golddominik893/libremonkey/commits)
 [![Issues](https://img.shields.io/github/issues/golddominik893/libremonkey?color=important)](https://github.com/golddominik893/libremonkey/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/golddominik893/libremonkey?color=blueviolet)](https://github.com/golddominik893/libremonkey/pulls)
 
-## LibreMonkey - create forms without spyware
-
 > [!CAUTION]
-> It is strongly not reccommended to deploy this software for production as there may be SQL injection vulnerabilities and there may also be a few other security vulnerabilities such as editing the fields in a form when you are not even logged in.
+> It is strongly not recommended to deploy this software for production as there may be SQL injection vulnerabilities and there may also be a few other security vulnerabilities such as editing the fields in a form when you are not even logged in.
 
 ### Features
 
 - Create Surveys
-    - view responses
-    - users can also view all their responses
-    - **in a future update form owners can get averages for user responses or analytics.*
+  - view responses
+  - users can also view all their responses
+  - **in a future update form owners can get averages for user responses or analytics.*
 - No third party advertisements or data monetisation.
 - It's Free Open Source Software, the free use is dependant on the instance operator.
 
@@ -29,7 +29,6 @@
 | **Privacy**        | No data collected or sold | [Privacy](https://www.surveymonkey.com/mp/legal/privacy/) | [Privacy](https://support.microsoft.com/en-us/office/security-and-privacy-in-microsoft-forms-7e57f9ba-4aeb-4b1b-9e21-b75318532cd9) | [Privacy](https://policies.google.com/privacy) |
 | **Speed**          | Very fast          | Fast                                         | Fast                                             | Fastest                                        |
 
-
 ### How it works
 
 LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey responses. LibreMonkey is the clear winner when in comparison to all the others because it is fast and does not sell your data.
@@ -38,15 +37,15 @@ LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey res
 
 | Home Page | Client Area |
 |---|---|
-| ![Home Page image](screenshots/home-page.png) | ![Client Area image](screenshots/client-area.png) |
+| ![Home Page image](screenshots/home-page.jpg) | ![Client Area image](screenshots/client-area.jpg) |
 
 | Form Creation | Form Editing |
 |---|---|
-| ![Form Creation image](screenshots/form-creation.png) | ![Form Editing image](screenshots/form-editing.png) |
+| ![Form Creation image](screenshots/form-creation.jpg) | ![Form Editing image](screenshots/form-editing.jpg) |
 
 | User Response | Login Page |
 |---|---|
-| ![User Response image](screenshots/user-response.png) | ![Login Page image](screenshots/login.png) |
+| ![User Response image](screenshots/user-response.jpg) | ![Login Page image](screenshots/login.jpg) |
 
 > [!NOTE]
 > This software is still under development and may not work as intended.
@@ -56,7 +55,7 @@ LibreMonkey uses the PHP backend alongside MySQL to store surveys and survey res
 - A web server like Apache or Nginx
 - PHP interpreter
 - SQL database like MySQL
-- phpMyAdmin (OPTIONAL) 
+- phpMyAdmin (OPTIONAL)
 
 ### Installation
 
