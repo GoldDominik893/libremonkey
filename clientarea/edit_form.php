@@ -120,10 +120,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <form id="form" method="POST" action="">
-        <label for="form_title">Title:</label>
+        <b>Title:</b><br>
         <input class="formcreationinput" type="text" id="form_title" name="form_title" value="<?php echo htmlspecialchars($current_title); ?>"><br>
 
-        <label for="form_description">Description:</label><br>
+        <b>Description:</b><br>
         <textarea class="formcreationinput" id="form_description" name="form_description"><?php echo htmlspecialchars($current_description); ?></textarea>
 
         <input type="hidden" name="update_form" value="update_form">
@@ -142,11 +142,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 
 if ($result_fields->num_rows > 0) {
+        echo '<b>Questions:</b><br>';
     while ($field = $result_fields->fetch_assoc()) {
         echo '<label class="inline" for="' . $field['field_id'] . '">' . $field['field_label'] . '</label><div class="field_type_icon inline">type: ' . $field['field_type'] . '</div>';
 
         echo '<form class="inline" method="POST">';
-        echo '<input class="inline" type="submit" name="delete_field" value="Delete">';
+        echo '<input class="inline deletebutton" type="submit" name="delete_field" value="Remove">';
         echo '<input type="hidden" name="delete_field_id" value="' . $field['field_id'] . '">';
         echo '</form><br>';
     }

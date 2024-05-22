@@ -26,8 +26,7 @@ $logged_in_user = $_SESSION['logged_in'];
 <a href="clientarea/" class="button">Get Started</a>
 </div>
 
-<div class="center"><h1>LibreMonkey lets you create unlimited surveys at no cost, we have all sorts of<br> 
-survey functions such as dropdowns, radio buttons, date and telephone numbers.<br>
+<div class="center"><h1 style="max-width: 600px; margin: auto; margin-top: 20px;">LibreMonkey lets you create unlimited surveys at no cost, we have all sorts of survey functions such as dropdowns, radio buttons, date and telephone numbers.<br>
 </h1></div>
 
 <br><br><br><h1 class="center">How we compare</h1>
@@ -72,9 +71,9 @@ survey functions such as dropdowns, radio buttons, date and telephone numbers.<b
   <tr>
     <td><b>Privacy</b></td>
     <td class="green-hl">No data collected or sold</td>
-    <td><a style="color: black;" href="https://www.surveymonkey.com/mp/legal/privacy/">Privacy</a></td>
-    <td><a style="color: black;" href="https://support.microsoft.com/en-us/office/security-and-privacy-in-microsoft-forms-7e57f9ba-4aeb-4b1b-9e21-b75318532cd9">Privacy</a></td>
-    <td><a style="color: black;" href="https://policies.google.com/privacy">Privacy</a></td>
+    <td><a style="color: white;" href="https://www.surveymonkey.com/mp/legal/privacy/">Privacy</a></td>
+    <td><a style="color: white;" href="https://support.microsoft.com/en-us/office/security-and-privacy-in-microsoft-forms-7e57f9ba-4aeb-4b1b-9e21-b75318532cd9">Privacy</a></td>
+    <td><a style="color: white;" href="https://policies.google.com/privacy">Privacy</a></td>
   </tr>
   <tr>
     <td><b>Speed</b></td>
