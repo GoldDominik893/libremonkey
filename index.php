@@ -89,7 +89,7 @@ survey functions such as dropdowns, radio buttons, date and telephone numbers.<b
 <div class="welcome2">
 <h1>Other cool things about LibreMonkey:</h1>
 <p>
-· It is Open Source on <a href="//github.com/golddominik893/libremonkey">GitHub</a>.<br>
+· It is Open Source on <a href="https://github.com/golddominik893/libremonkey">GitHub</a>.<br>
 · We don't sell or collect your data.<br>
 · Cookies aren't used apart from the session cookie to keep you logged in.<br>
 · Optimised for mobile use.<br>
