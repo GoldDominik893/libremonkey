@@ -55,11 +55,12 @@ $conn->close();
 <h1 class="center">Form</h1>
     <div class="center-container2 whitebg">
         <h2 class="no-margin"><?php echo htmlspecialchars($form_details['title']); ?></h2>
-        <p class="no-margin"><?php echo htmlspecialchars(nl2br($form_details['description'])); ?></p>
+        <p class="no-margin"><?php echo nl2br(htmlspecialchars($form_details['description'])); ?></p>
         <!-- Display fetched form details and fields in an HTML form -->
         <form method="POST" action="process_response.php">
+        <br><b>Questions:</b><br>
         <?php foreach ($fields as $field): ?>
-            <label for="field_<?php echo $field['field_id']; ?>"><?php echo $field['field_label']; ?>:</label>
+            <label for="field_<?php echo $field['field_id']; ?>"><?php echo $field['field_label']; ?>:</label><br>
 
             <?php if ($field['field_type'] === 'text'): ?>
                 <input type="text" id="field_<?php echo $field['field_id']; ?>" name="field_<?php echo htmlspecialchars($field['field_id']); ?>"><br>

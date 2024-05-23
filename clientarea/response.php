@@ -72,7 +72,7 @@ if ($row = $result_form->fetch_assoc()) {
         echo "<td>" . $response['response_id'] . "</td>";
         echo "<td>" . $response['user_id'] . "</td>";
         echo "<td>" . $response['submitted_time'] . "</td>";
-        echo '<td><a style="color: black" href="../response-i.php/?id='.$response['response_id'].'">View</a> Delete</td>';
+        echo '<td><a style="color: white" href="../response-i.php/?id='.$response['response_id'].'">View</a> Delete</td>';
         echo "</tr>";
     }
 

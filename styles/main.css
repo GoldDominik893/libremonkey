@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono&family=Roboto+Slab&family=Signika+Negative&display=swap');
 body { 
   margin: 0px;
-  background-color: #f3f3f3;
+  background-color: #334067;
   font-family: 'Anton', sans-serif;
   font-family: 'Roboto Mono', monospace;
   font-family: 'Roboto Slab', serif;
   font-family: 'Signika Negative', sans-serif;
+  color: white;
   }
 a {
   color: white;
@@ -43,7 +44,7 @@ li:hover {
   padding-bottom: 180px;
 }
 .welcome2 {
-  background-color: #3a61ce;
+  background-color: #232839;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -68,7 +69,7 @@ li:hover {
   padding-top: 20px;
 }
 .loginbg-color {
-  background-color: #3a61ce;
+  background-color: #334067;
 }
 .button {
   padding: 10px 20px;
@@ -111,16 +112,16 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid #494949;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #313131;
 }
 tr:nth-child(odd) {
-  background-color: #ffffff;
+  background-color: #3b3b3b;
 }
 
 
@@ -144,10 +145,8 @@ tr:nth-child(odd) {
   color: rgb(255, 255, 255);
 }
 
-
-
 .registerbtn {
-  background-color: #1a74be;
+  background-color: #1abe7f;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -171,22 +170,21 @@ tr:nth-child(odd) {
 }
 
 .whitebg {
-  background-color: white;
+  background-color: #1e1e1e;
   max-width: 680px;
-  color: black;
+  color: white;
 }
 .no-margin {
   margin: 0;
 }
 
 .button-form {
-  background-color: #e4e4e4;
+  background-color: #313131;
   float: right;
   transition: transform 0.2s;
   transition: 0.3s;
   border-radius: 7px;
-  color: black; 
-  padding: 5px; 
+  padding: 5px;
   padding-bottom: 0;
 }
 
@@ -196,28 +194,48 @@ tr:nth-child(odd) {
   transition: 0.3s;
 }
 
-.formcreationinput{
+input, textarea{
   padding: 5px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  background: #eeeeee;
+  background: #252525;
   border: 1px solid rgb(63, 63, 63);
   border-radius: 5px;
-  color: rgb(0, 0, 0);
+  color: rgb(255 255 255);
 }
 .formcreationinput input {
   width: 315px;
 }
+
+input {
+  background: #252525;
+  border: 1px solid rgb(63, 63, 63);
+  color: white;
+}
+
+input.deletebutton {
+  background-color: #793937;
+  border-radius: 4px;
+  border: none;
+  padding: 3px 5px 3px 5px;
+  width: fit-content;
+  margin-left: 2px;
+}
+
 .formcreationinput[type=text]:focus, .formcreationinput[type=password]:focus {
   outline: none;
 }
 textarea {
   resize: vertical;
   width: calc(100% - 14px);
+  background: #252525;
+  border: 1px solid rgb(63, 63, 63);
+  color: white;
 }
 
+
 .field_type_icon {
-  background-color: #ceb4ff;
+  background-color: #376779;
   border-radius: 4px;
   padding: 0 5px 0 5px;
   width: fit-content;
@@ -229,14 +247,13 @@ textarea {
 } 
 
 .green-hl {
-  background-color: #9fffdc;
+  background-color: #4d695f;
 }
 
 .icon-button {
-  color: black; 
-  padding: 5px; 
+  padding: 5px;
   padding-bottom: 0;
-  background-color: #e4e4e4;
+  background-color: #313131;
   transition: transform 0.2s;
   transition: 0.3s;
   border-radius: 7px;
