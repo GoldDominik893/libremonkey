@@ -159,10 +159,8 @@ if ($result_fields->num_rows > 0) {
     <div id="addFieldForm" style="display: none;">
     <input type="hidden" id="formId" value="<?php echo $form_id; ?>">
     
-    <label for="fieldLabel">Field Label:</label><br>
-    <input type="text" id="fieldLabel"><br><br>
+    <input placeholder="New field name" type="text" id="fieldLabel">
     
-    <label for="fieldType">Field Type:</label><br>
     <select id="fieldType">
         <option value="text">Text</option>
         <option value="date">Date</option>
@@ -176,15 +174,15 @@ if ($result_fields->num_rows > 0) {
         <option value="time">Time</option>
         <option value="url">URL</option>
         <option value="week">Week</option>
-    </select><br><br>
+    </select>
     
-    <button id="submitFieldBtn">Submit</button>
+    <button id="submitFieldBtn">Add Field</button>
 </div>
 
 
     <script>
 document.getElementById('addFieldBtn').addEventListener('click', function() {
-    document.getElementById('addFieldForm').style.display = 'block';
+    document.getElementById('addFieldForm').style.display = 'flex';
 });
 
 document.getElementById('submitFieldBtn').addEventListener('click', function() {

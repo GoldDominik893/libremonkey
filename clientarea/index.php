@@ -44,7 +44,7 @@ if ($_SESSION['logged_in'] == true) {
                 $result = $stmt->get_result();
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<br>";
+                        echo '<br>';
                         echo "<b>" . $row['title'] . "</b> <i>#" . $row['form_id'] . "</i><br>";
                         echo "Created: " . $row['creation_date'] . "<br>";
                         echo "Last Modified: " . $row['last_modified_date'] . "<br>";
@@ -53,7 +53,7 @@ if ($_SESSION['logged_in'] == true) {
                         echo '<a class="icon-button" href="edit_form.php?form_id=' . $row['form_id'] . '"><span class="material-symbols-outlined">edit</span></a><br>';
                     }
                 } else {
-                    echo '<br><p class="no-margin">You don\'t have any forms yet! <a href="createform.php" style="color: black;">Create one</a></p>';
+                    echo '<br><p class="no-margin">You don\'t have any forms yet! <a href="createform.php">Create one</a></p>';
                 }
                 $stmt->close();
             } else {
