@@ -18,6 +18,23 @@
 - No third party advertisements or data monetisation.
 - It's Free Open Source Software, the free use is dependant on the instance operator.
 
+### To do
+
+- radio buttons
+- checkboxes
+- user settings
+  - theme settings
+  - password change
+  - delete account
+- anonymous responses
+- email verification option in surveys
+- dropdowns
+- allow users to remove responses
+- analytics for number based surveys
+- survey customisation
+  - themes
+  - quiz mode
+
 ### Advantages of LibreMonkey
 
 |                   | LibreMonkey       | SurveyMonkey(free)                           | Microsoft Forms(free)                            | Google Forms(free)                             |

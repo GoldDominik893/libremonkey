@@ -52,32 +52,60 @@ $stmt_fetch_response->execute();
 $result_response = $stmt_fetch_response->get_result();
 
 if ($response = $result_response->fetch_assoc()) {
-    echo "<h2>Response Details:</h2>";
-    echo "<p>Response ID: " . $response['response_id'] . "</p>";
-    echo "<p>Form ID: " . $response['form_id'] . "</p>";
-    echo "<p>User ID: " . $response['user_id'] . "</p>";
-    echo "<p>Submitted Time: " . $response['submitted_time'] . "</p>";
+    echo "<p>Response <i>#" . $response['response_id'] . "</i> ";
+    
+    $form_id = $response['form_id'];
+    $sql_fetch_form_title = "SELECT title FROM forms WHERE form_id = ?";
+    $stmt_fetch_form_title = $conn->prepare($sql_fetch_form_title);
+    $stmt_fetch_form_title->bind_param("i", $form_id);
+    $stmt_fetch_form_title->execute();
+    $result_form_title = $stmt_fetch_form_title->get_result();
 
+    if ($form_row = $result_form_title->fetch_assoc()) {
+        echo "for form titled: " . htmlspecialchars($form_row['title']);
+    }
+    
+    // Fetch the username based on the user_id from the login table
+    $user_id = $response['user_id'];
+    $sql_fetch_username = "SELECT username FROM login WHERE user_id = ?";
+    $stmt_fetch_username = $conn->prepare($sql_fetch_username);
+    $stmt_fetch_username->bind_param("i", $user_id);
+    $stmt_fetch_username->execute();
+    $result_username = $stmt_fetch_username->get_result();
+
+    if ($username_row = $result_username->fetch_assoc()) {
+        echo ", submitted by: " . htmlspecialchars($username_row['username']);
+    }
+
+    echo ", submitted at: " . $response['submitted_time'] . "</p>";
+
+    // Fetch the response data and field labels
     $sql_fetch_response_data = "SELECT rd.user_input, f.field_label
                                 FROM response_data rd
                                 INNER JOIN fields f ON rd.field_id = f.field_id
                                 WHERE rd.response_id = ?";
     $stmt_fetch_response_data = $conn->prepare($sql_fetch_response_data);
-    $stmt_fetch_response_data->bind_param("i", $response_id);
+    $stmt_fetch_response_data->bind_param("i", $response['response_id']);
     $stmt_fetch_response_data->execute();
     $result_response_data = $stmt_fetch_response_data->get_result();
 
     echo "<h2>Response Data:</h2>";
 
     while ($response_data = $result_response_data->fetch_assoc()) {
-        echo "<b>" . $response_data['field_label'] . "</b><br>";
+        echo "<b>" . htmlspecialchars($response_data['field_label']) . "</b><br>";
         echo htmlspecialchars($response_data['user_input'])."<br>";
     }
 
+    // Close statements
     $stmt_fetch_response_data->close();
+    $stmt_fetch_username->close();
+    $stmt_fetch_form_title->close();
 } else {
     echo "Response not found or unauthorized access";
 }
+
+
+
 
 $stmt_fetch_response->close();
 $conn->close();
