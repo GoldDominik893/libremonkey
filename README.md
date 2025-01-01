@@ -101,7 +101,8 @@ nano /var/www/html/config.php
 
 ### License
 
-Libremonkey is licensed under the MIT License.
+Libremonkey is licensed under the MIT License. 
+Copyright (c) Dominik Wajda 2025
 
 #### Liability
 
